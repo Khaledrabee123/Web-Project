@@ -1,0 +1,90 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Customer service</h1>
+
+
+<input type="text" id="message" name="message" class="form-control" />
+
+<input type="button" value="JoinGroup" onclick="joingroup()" />
+
+<input type="button" value="Send" onclick="sendmessage()" />
+
+<input type="button" value="Leave" onclick="leavegroup()" />
+<br />
+
+
+
+<ul id="ul">
+
+	<li>ex</li>
+
+</ul>
+
+@section Scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+	<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+	<script type="text/javascript"></script>
+
+	<script>
+
+
+
+		var con = new signalR.HubConnectionBuilder().withUrl("/Chat").build();
+
+		// Start the connection
+		con.start();
+
+		//
+
+
+		con.on("sendmessage", function (n, m) {
+
+			$("#ul").append("<li>" + n + " - " + m + "</li>");
+		});
+
+		// Optionally, you can define methods to handle messages from the server
+
+
+
+
+		con.on("added", function (n) {
+
+			$("#ul").append("<li>" + n + "</li>");
+		});
+
+		"Custadd"
+		con.on("Custadd", function (n) {
+
+			$("#ul").append("<li>" + n + "</li>");
+		});
+
+		con.on("error", function (n) {
+
+			$("#ul").append("<li>" + n + "</li>");
+		});
+		con.on("groupLeft", function (n) {
+
+			$("#ul").append("<li>" + n + "</li>");
+		});
+
+		// Optionally, you can define methods to handle messages from the server
+		var username = "@User.Identity.Name";
+		function joingroup() {
+		
+			con.invoke("joinGroup", username);
+		}
+
+		function sendmessage() {
+			con.invoke("sendMessage", username, $("#message").val());
+		}
+
+		function leavegroup() {
+			con.invoke("leaveGroup", username);
+		}
+
+	</script>
+
+}

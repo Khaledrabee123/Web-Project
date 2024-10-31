@@ -1,0 +1,45 @@
+﻿@model List<LaptopShop.Models.database.Laptop>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<nav class="navbar">
+	<h2>Laptop Brands</h2>
+	<ul>
+		<li><a href="/Laptop/getcatagory?catagory=Apple">Apple</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=Dell">Dell</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=HP">HP</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=Lenovo">Lenovo</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=Asus">Asus</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=Acer">Acer</a></li>
+		<li><a href="/Laptop/getcatagory?catagory=MSI">MSI</a></li>
+	</ul>
+</nav>
+<div class="all">
+
+	@foreach (var item in Model)
+	{
+
+		<div class="product-card">
+			<img src="/imges/@item.Image">
+			<h2 class="product-title">@item.name</h2>
+			<p class="product-category">@item.Brand</p>
+			<p class="product-specs">@item.description<br></p> <p class="product-price">@item.price</p>
+			<div class="buttons">
+				<button onclick="window.location = '/Card/AddToCard/@item.Id/@User.Identity.Name'">Add to cart</button>
+				<button onclick="window.location = '/Laptop/gitbyid/@item.Id'">detals</button>
+
+			</div>
+		</div>
+
+	}
+</div>
+<div>
+	@if (User.IsInRole("Admin"))
+	{
+		<button onclick="window.location = '/Admin/addLaptop'">add Laptop</button>
+	}
+
+
+</div>

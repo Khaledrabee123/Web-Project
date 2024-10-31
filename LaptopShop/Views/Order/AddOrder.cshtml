@@ -1,0 +1,102 @@
+﻿@model LaptopShop.Models.database.Order
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Details</title>
+<style>
+	body, html {
+		height: 100%;
+		margin: 0;
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f9;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.card {
+		box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		border-radius: 16px;
+		background-color: #ffffff;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+
+		.card h2, .card h5 {
+			margin: 0 0 15px;
+			color: #424242;
+		}
+
+			.card h5 span {
+				color: #8c9eff;
+			}
+
+		.card p {
+			margin: 5px 0;
+			color: #757575;
+		}
+
+	.order-summary {
+		margin-top: 20px;
+	}
+
+		.order-summary table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.order-summary th, .order-summary td {
+			padding: 15px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.order-summary th {
+			background-color: #8c9eff;
+			color: white;
+		}
+
+		.order-summary td {
+			color: #424242;
+		}
+
+	.tracking-container {
+		background-color: #424242;
+		color: #fff;
+		padding: 20px;
+		border-radius: 16px;
+		margin-bottom: 20px;
+	}
+
+		.tracking-container h3 {
+			color: #8c9eff;
+			margin-bottom: 20px;
+		}
+
+	.text-primary {
+		color: #8c9eff;
+	}
+
+	.text-end {
+		text-align: right;
+	}
+
+	.fw-bold {
+		font-weight: bold;
+	}
+</style>
+<div class="container">
+	<!-- Order Details -->
+	<div class="card">
+		<h2>Order Details</h2>
+		<h5>Invoice <span>@Model.Id</span></h5>
+
+		<!-- Customer Information -->
+		<div class="card">
+			<h5>Customer Information</h5>
+			<p><strong>Name:</strong> @User.Identity.Name</p>
+			<p><strong>Total :</strong> @Model.TotalAmount </p>
+			<p><strong>Date:</strong> @Model.OrderDate </p>
+		</div>

@@ -1,0 +1,28 @@
+﻿@model List<LaptopShop.Models.database.Laptop>
+
+@{
+    ViewData["Title"] = "viewCard";
+}
+
+<h1>viewCard</h1>
+<div class ="all_card">
+@foreach(var item in Model)
+{
+        <div class="card" style="width: 18rem;">
+      <img src="/imges/@item.Image" class="card-img-top" alt="@item.name">
+      <div class="card-body">
+        <h5 class="card-title">@item.name</h5>
+        <p class="card-text">@item.description</p>
+            <p class="card-text">@item.price$</p>
+           
+            <a href="/Laptop/gitbyid/@item.Id" class="btn btn-primary">details</a>
+                <a href="/Card/deletitem?Laptopid=@item.Id&username=@User.Identity.Name" class="btn btn-primary">Delete</a>
+            </div>
+    </div>
+}
+</div>
+<div class ="total">
+<p class="card-text">total = @ViewBag.Total $</p>
+</div>
+
+<a href="/Order/AddOrder/1/@User.Identity.Name/@ViewBag.Total" type="button" class="btn btn-success">Buy</a>

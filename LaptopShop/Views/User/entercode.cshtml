@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "entercode";
+}
+
+
+
+<form asp-action="ConfirmEmail" method="get">
+
+    <input type="hidden" name="userId" value="@ViewData["id"]" />
+    <!-- Input for the code -->
+    <label for="code">Enter Code:</label>
+    <input type="number" id="code" name="code" required />
+
+    <button type="submit">Confirm Email</button>
+</form>

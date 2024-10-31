@@ -1,0 +1,31 @@
+﻿@model LaptopShop.Models.database.Laptop
+
+@{
+	ViewData["Title"] = "gitbyid";
+}
+
+
+
+<div class="product-container">
+	<img src="/imges/@Model.Image" alt="@Model.name">
+	<div class="product-details">
+		<h2>@Model.name </h2>
+		<p><strong>Price:</strong> <span id="price">@Model.price$</span></p>
+		<p><strong>Availability:</strong> <span id="availability">In Stock</span></p>
+		<ul>
+			<li>@Model.description</li>
+			<li><strong>Processor:</strong>@Model.Processor</li>
+			<li><strong>RAM:</strong>@Model.Memory  </li>
+			<li><strong>Storage:</strong>@Model.Storage</li>
+			<li><strong>Display:</strong>@Model.Display</li>
+		</ul>
+		<button id="buy-button">Buy Now</button>
+		@if (User.IsInRole("Admin"))
+		{
+			<a href="/Admin/remove/@Model.Id" class="btn btn-primary">remove</a>
+
+		}
+
+	</div>
+</div>
+

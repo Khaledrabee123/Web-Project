@@ -1,0 +1,313 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\laptopsetvice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\laptopsetvice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\laptopreposatory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\laptopreposatory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\user\\entercode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\user\\entercode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\user\\registrationsuccessful.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\user\\registrationsuccessful.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\models\\database\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\models\\database\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\laptop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\laptop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\laptop\\gitbyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\laptop\\gitbyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|c:\\users\\sigma\\source\\repos\\laptopshop\\laptopshop\\views\\user\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38E0CDFF-2330-40BE-B2DA-9176F85B1098}|LaptopShop\\LaptopShop.csproj|solutionrelative:laptopshop\\views\\user\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "laptopSetvice.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\laptopSetvice.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\laptopSetvice.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\laptopSetvice.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\laptopSetvice.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:33:46.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LaptopReposatory.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\LaptopReposatory.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\LaptopReposatory.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\LaptopReposatory.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\LaptopReposatory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:33:44.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Orders.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\Orders.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\Orders.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\Orders.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\Orders.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:33:40.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "LaptopShop\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:33:07.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\Cart.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\Cart.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\Cart.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:33:04.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\Register.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\User\\Register.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\Register.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\User\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:31:44.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "entercode.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\entercode.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\User\\entercode.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\entercode.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\User\\entercode.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:28:41.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:19:14.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\UserRepo.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\UserRepo.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\UserRepo.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\UserRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T14:17:47.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:17:45.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "login.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\login.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\User\\login.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\login.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\User\\login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:17:16.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\Laptop\\Index.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\Laptop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\Laptop\\Index.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\Laptop\\Index.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:17:04.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "gitbyid.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\Laptop\\gitbyid.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\Laptop\\gitbyid.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\Laptop\\gitbyid.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\Laptop\\gitbyid.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:16:36.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\User\\ConfirmEmail.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\User\\ConfirmEmail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T23:10:40.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\User.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Models\\database\\User.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Models\\database\\User.cs",
+              "RelativeToolTip": "LaptopShop\\Models\\database\\User.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T23:07:53.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistrationSuccessful.cshtml",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\RegistrationSuccessful.cshtml",
+              "RelativeDocumentMoniker": "LaptopShop\\Views\\User\\RegistrationSuccessful.cshtml",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Views\\User\\RegistrationSuccessful.cshtml",
+              "RelativeToolTip": "LaptopShop\\Views\\User\\RegistrationSuccessful.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T23:07:20.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "LaptopShop\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\sigma\\source\\repos\\LaptopShop\\LaptopShop\\Controllers\\UserController.cs",
+              "RelativeToolTip": "LaptopShop\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAUwCEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T19:33:15.36Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
