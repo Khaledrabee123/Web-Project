@@ -64,9 +64,9 @@ namespace LaptopShop.Controllers
 
 
 
-                var res = await UserManager.FindByEmailAsync(viewUser.Email);
-                var res2 = await UserManager.FindByEmailAsync(viewUser.UserName);
-                if (res == null && res2 == null)
+                var IsEmailUsed = await UserManager.FindByEmailAsync(viewUser.Email);
+                var IsUsernameUser = await UserManager.FindByEmailAsync(viewUser.UserName);
+                if (IsEmailUsed == null && IsUsernameUser == null)
                 {
                     viewUser.Id = Random.randomNumber().ToString();
                     string key = "User" + viewUser.Id;
@@ -80,7 +80,7 @@ namespace LaptopShop.Controllers
                 }
                 else
                 {
-                    if (res == null)
+                    if (IsUsernameUser == null)
                     {
                         ModelState.AddModelError("Password", "user name must be uniqe");
                     }
@@ -121,13 +121,13 @@ namespace LaptopShop.Controllers
 
             if (ModelState.IsValid)
             {
-                User res = await UserManager.FindByNameAsync(login.Username);
-                if (res != null)
+                User user = await UserManager.FindByNameAsync(login.Username);
+                if (user != null)
                 {
-                    bool isOK = await UserManager.CheckPasswordAsync(res, login.Password);
+                    bool isOK = await UserManager.CheckPasswordAsync(user, login.Password);
                     if (isOK)
                     {
-                        await SignInManager.SignInAsync(res, login.RememberMe);
+                        await SignInManager.SignInAsync(user, login.RememberMe);
                         _logger.LogInformation("{user} succsesful", login.Username);
                         return RedirectToAction("Index", "Home");
                     }
@@ -288,7 +288,7 @@ namespace LaptopShop.Controllers
 
             }
             string Userkey ="User"+ userId;
-            if (_Cache.TryGetValue(Userkey, out ViewUser user))
+            if (_Cache.TryGetValue(Userkey, out ViewUser? user))
             {
                 _logger.LogInformation("user information not expierd found in the cache");
             }
@@ -307,10 +307,11 @@ namespace LaptopShop.Controllers
                 return View();
 
             }
-            //Find the User By Id
+            
 
             if (_cachecode == code)
             {
+                // Create User
                 User RegUser = new User();
                 RegUser.Email = user.Email;
                 RegUser.UserName = user.UserName;
@@ -322,7 +323,7 @@ namespace LaptopShop.Controllers
                 return View();
             }
 
-            //Call the ConfirmEmailAsync Method which will mark the Email as Confirmed
+            
             return View();
         }
 
