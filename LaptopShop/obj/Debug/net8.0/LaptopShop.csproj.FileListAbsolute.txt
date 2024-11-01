@@ -1,5 +1,4 @@
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\appsettings.json
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\LaptopShop.staticwebassets.runtime.json
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\LaptopShop.exe
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\LaptopShop.deps.json
@@ -289,3 +288,4 @@ C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\Microsoft.Asp
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\obj\Debug\net8.0\LaptopShop.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\appsettings.json
