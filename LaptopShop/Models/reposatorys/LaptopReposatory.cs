@@ -1,16 +1,19 @@
-﻿using LaptopShop.Views.viewmodels;
+﻿using LaptopShop.Models.database;
+using LaptopShop.Models.interfaces;
+using LaptopShop.Views.viewmodels;
 
-namespace LaptopShop.Models.database
+namespace LaptopShop.Models.reposatorys
 {
     public class LaptopReposatory : ILaptop
     {
         DBlaptops DBlaptops;
-        public LaptopReposatory(DBlaptops db) {
+        public LaptopReposatory(DBlaptops db)
+        {
             DBlaptops = db;
         }
         public Laptop getLaptopbyid(int id)
         {
-            return (Laptop)DBlaptops.Laptops.FirstOrDefault(e => e.Id == id);
+            return DBlaptops.Laptops.FirstOrDefault(e => e.Id == id);
 
         }
         public List<Laptop> getLaptopbyCategorie(string brand)
@@ -33,16 +36,16 @@ namespace LaptopShop.Models.database
         {
             DBlaptops.Remove(laptop);
             DBlaptops.SaveChanges();
-            
+
         }
         public void Edit(Laptop laptop)
         {
             DBlaptops.Update(laptop);
             DBlaptops.SaveChanges();
         }
-       public List<Laptop> getbyCategorie(string categorie)
+        public List<Laptop> getbyCategorie(string categorie)
         {
-       return  DBlaptops.Laptops.Where(e=>e.Brand == categorie).ToList();
+            return DBlaptops.Laptops.Where(e => e.Brand == categorie).ToList();
         }
         public Laptop MakeLaptop(Laptopview receivelaptop)
         {
@@ -63,7 +66,7 @@ namespace LaptopShop.Models.database
 
         }
 
-     
+
     }
 
 }

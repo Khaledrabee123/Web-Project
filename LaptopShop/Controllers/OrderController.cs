@@ -1,14 +1,15 @@
 ﻿using System.Security.Claims;
 using LaptopShop.Models.database;
+using LaptopShop.Models.reposatorys;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 
 namespace LaptopShop.Controllers
 {
-	public class OrderController : Controller
+    public class OrderController : Controller
 	{
-		static int i =1000;
+		
 		private readonly UserManager<User> userManager;
 		ILogger<OrderController> _logger;	
 		public OrderController(UserManager<User> userManager, OrderRepository orderRepository , ILogger<OrderController> logger)

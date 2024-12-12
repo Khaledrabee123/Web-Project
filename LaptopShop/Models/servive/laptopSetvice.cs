@@ -1,6 +1,8 @@
-﻿using LaptopShop.Views.viewmodels;
+﻿using LaptopShop.Models.database;
+using LaptopShop.Models.reposatorys;
+using LaptopShop.Views.viewmodels;
 
-namespace LaptopShop.Models.database
+namespace LaptopShop.Models.servive
 {
     public class laptopSetvice
     {
@@ -27,7 +29,7 @@ namespace LaptopShop.Models.database
         }
         public void add(Laptop laptop)
         {
-                LaptopReposatory.add(laptop);
+            LaptopReposatory.add(laptop);
         }
         public List<Laptop> getbyCategorie(string categorie)
         {
@@ -36,11 +38,11 @@ namespace LaptopShop.Models.database
 
         public void remove(Laptop laptop)
         {
-           LaptopReposatory.remove(laptop);
+            LaptopReposatory.remove(laptop);
         }
         public void Edit(Laptop laptop)
         {
-          LaptopReposatory.Edit(laptop);
+            LaptopReposatory.Edit(laptop);
         }
         public Laptop MakeLaptop(Laptopview receivelaptop)
         {

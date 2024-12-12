@@ -1,6 +1,7 @@
-﻿using LaptopShop.Views.viewmodels;
+﻿using LaptopShop.Models.database;
+using LaptopShop.Views.viewmodels;
 
-namespace LaptopShop.Models.database
+namespace LaptopShop.Models.interfaces
 {
     public interface ILaptop
     {
@@ -12,8 +13,8 @@ namespace LaptopShop.Models.database
         public List<Laptop> getbyCategorie(string categorie);
         public void add(Laptop laptop);
         public void remove(Laptop laptop);
-        public void Edit (Laptop laptop);
-        
+        public void Edit(Laptop laptop);
+
         public Laptop MakeLaptop(Laptopview laptop);
 
     }

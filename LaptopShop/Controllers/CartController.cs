@@ -1,6 +1,8 @@
 ﻿using System.Security.Claims;
 using System.Text;
 using LaptopShop.Models.database;
+using LaptopShop.Models.reposatorys;
+using LaptopShop.Models.servive;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

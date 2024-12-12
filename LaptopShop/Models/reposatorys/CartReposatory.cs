@@ -1,14 +1,15 @@
-﻿
+﻿using LaptopShop.Models.database;
+using LaptopShop.Models.interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace LaptopShop.Models.database
+namespace LaptopShop.Models.reposatorys
 {
     public class CartReposatory : ICart
     {
         DBlaptops DBlaptops;
         public CartReposatory(DBlaptops db)
         {
-            this.DBlaptops = db;
+            DBlaptops = db;
         }
         public void AddToCart(Cart cart)
         {
@@ -19,8 +20,8 @@ namespace LaptopShop.Models.database
 
         public async Task DeleteFromCart(string UserID, int laptopId)
         {
-             DBlaptops.Database.ExecuteSqlRaw("EXEC DeleteCartByUserIdAndLaptopId @p0, @p1", UserID, laptopId);
-             DBlaptops.SaveChanges();
+            DBlaptops.Database.ExecuteSqlRaw("EXEC DeleteCartByUserIdAndLaptopId @p0, @p1", UserID, laptopId);
+            DBlaptops.SaveChanges();
         }
 
         public List<Laptop> getUsersLaptops(string userID)

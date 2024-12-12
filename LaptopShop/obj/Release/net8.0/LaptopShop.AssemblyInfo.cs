@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaptopShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b50c0433810e59959cfc2b81d9ed0a6e6ced8728")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+253893a450582f83dafc6f1b7228bfa1c11a738b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LaptopShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaptopShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

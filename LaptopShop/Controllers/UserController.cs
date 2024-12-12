@@ -1,8 +1,9 @@
 ﻿using System.Data;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
-using ASPNETCoreIdentityDemo.Models;
 using LaptopShop.Models.database;
+using LaptopShop.Models.reposatorys;
+using LaptopShop.Models.servive;
 using LaptopShop.Views.viewmodels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -76,7 +77,7 @@ namespace LaptopShop.Controllers
                         .SetPriority(CacheItemPriority.Normal);
                     _Cache.Set(key, viewUser, cacheOptions);
                     await SendConfirmationEmail(viewUser.Email, viewUser);
-                    return View("RegistrationSuccessful");
+                    return RedirectToAction("entercode", "User", new { UserId = viewUser.Id });
                 }
                 else
                 {
@@ -173,79 +174,7 @@ namespace LaptopShop.Controllers
 
 
 
-        public IActionResult ExternalLogin(string provider, string returnUrl = "")
-        {
-            var redirectUrl = Url.Action("ExternalLoginCallback", "User", new { ReturnUrl = returnUrl });
-
-            var properties = SignInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
-
-            return new ChallengeResult(provider, properties);
-        }
-
-
-
-
-
-
-
-
-
-        public async Task<IActionResult> ExternalLoginCallback(string returnUrl = "", string remoteError = "")
-        {
-
-            var loginVM = new loginViewmodel()
-            {
-                Schemes = await SignInManager.GetExternalAuthenticationSchemesAsync()
-            };
-
-            if (!string.IsNullOrEmpty(remoteError))
-            {
-                ModelState.AddModelError("", $"Error from extranal login provide: {remoteError}");
-                return View("Login", loginVM);
-            }
-
-            //Get login info
-            var info = await SignInManager.GetExternalLoginInfoAsync();
-            if (info == null)
-            {
-                ModelState.AddModelError("", $"Error from extranal login provide: {remoteError}");
-                return View("Login", loginVM);
-            }
-
-            var signInResult = await SignInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
-
-            if (signInResult.Succeeded)
-                return RedirectToAction("Index", "Home");
-            else
-            {
-                var userEmail = info.Principal.FindFirstValue(ClaimTypes.Email);
-                if (!string.IsNullOrEmpty(userEmail))
-                {
-                    var user = await UserManager.FindByEmailAsync(userEmail);
-
-                    if (user == null)
-                    {
-                        user = new Models.database.User()
-                        {
-                            UserName = userEmail,
-                            Email = userEmail,
-                            EmailConfirmed = true
-                        };
-
-                        await UserManager.CreateAsync(user);
-                    }
-
-                    await SignInManager.SignInAsync(user, isPersistent: false);
-
-                    return RedirectToAction("Index", "Home");
-                }
-
-            }
-
-            ModelState.AddModelError("", $"Something went wrong");
-            return View("Login", loginVM);
-        }
-
+    
         private async Task SendConfirmationEmail(string? email, ViewUser? user)
         {
 
@@ -263,7 +192,7 @@ namespace LaptopShop.Controllers
             var ConfirmationLink = Url.Action("entercode", "User",
             new { UserId = user.Id}, protocol: HttpContext.Request.Scheme);
             //Send the Confirmation Email to the User Email Id
-            await emailSender.SendEmailAsync(email, $"Confirm Your Email befor 15 Minutes", $"Please confirm your account the code is {code} by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
+            await emailSender.SendEmailAsync(email, $"enter the code plz", $"Please confirm your account the code is {code} by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
        
         }
 
@@ -342,6 +271,81 @@ namespace LaptopShop.Controllers
             }
             return View();
         }
+
+
+        public IActionResult ExternalLogin(string provider, string returnUrl = "")
+        {
+            var redirectUrl = Url.Action("ExternalLoginCallback", "User", new { ReturnUrl = returnUrl });
+
+            var properties = SignInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+
+            return new ChallengeResult(provider, properties);
+        }
+
+
+
+
+
+
+
+
+
+        public async Task<IActionResult> ExternalLoginCallback(string returnUrl = "", string remoteError = "")
+        {
+
+            var loginVM = new loginViewmodel()
+            {
+                Schemes = await SignInManager.GetExternalAuthenticationSchemesAsync()
+            };
+
+            if (!string.IsNullOrEmpty(remoteError))
+            {
+                ModelState.AddModelError("", $"Error from extranal login provide: {remoteError}");
+                return View("Login", loginVM);
+            }
+
+            //Get login info
+            var info = await SignInManager.GetExternalLoginInfoAsync();
+            if (info == null)
+            {
+                ModelState.AddModelError("", $"Error from extranal login provide: {remoteError}");
+                return View("Login", loginVM);
+            }
+
+            var signInResult = await SignInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+
+            if (signInResult.Succeeded)
+                return RedirectToAction("Index", "Home");
+            else
+            {
+                var userEmail = info.Principal.FindFirstValue(ClaimTypes.Email);
+                if (!string.IsNullOrEmpty(userEmail))
+                {
+                    var user = await UserManager.FindByEmailAsync(userEmail);
+
+                    if (user == null)
+                    {
+                        user = new Models.database.User()
+                        {
+                            UserName = userEmail,
+                            Email = userEmail,
+                            EmailConfirmed = true
+                        };
+
+                        await UserManager.CreateAsync(user);
+                    }
+
+                    await SignInManager.SignInAsync(user, isPersistent: false);
+
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+
+            ModelState.AddModelError("", $"Something went wrong");
+            return View("Login", loginVM);
+        }
+
     }
 
 }

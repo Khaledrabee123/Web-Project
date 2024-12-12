@@ -1,4 +1,4 @@
-﻿namespace LaptopShop.Models.database
+﻿namespace LaptopShop.Models.interfaces
 {
     public interface IRandom
     {

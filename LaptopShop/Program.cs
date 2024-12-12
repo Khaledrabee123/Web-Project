@@ -1,6 +1,8 @@
-using ASPNETCoreIdentityDemo.Models;
 using LaptopShop.ChatHub;
 using LaptopShop.Models.database;
+using LaptopShop.Models.interfaces;
+using LaptopShop.Models.reposatorys;
+using LaptopShop.Models.servive;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,7 +10,7 @@ using Serilog;
 
 namespace LaptopShop
 {
-	public class Program
+    public class Program
 	{
 		public static void Main(string[] args)
 		{

@@ -1,4 +1,5 @@
 ﻿using LaptopShop.Models.database;
+using LaptopShop.Models.servive;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;

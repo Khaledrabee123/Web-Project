@@ -1,7 +1,7 @@
 ﻿using System.Net.Mail;
 using System.Net;
 
-namespace ASPNETCoreIdentityDemo.Models
+namespace LaptopShop.Models.servive
 {
     public interface ISenderEmail
     {

@@ -1,4 +1,6 @@
-﻿namespace LaptopShop.Models.database
+﻿using LaptopShop.Models.database;
+
+namespace LaptopShop.Models.interfaces
 {
     public interface ICart
     {

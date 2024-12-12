@@ -1,5 +1,6 @@
 ﻿using System.Security.Claims;
 using LaptopShop.Models.database;
+using LaptopShop.Models.servive;
 using LaptopShop.Views.viewmodels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
