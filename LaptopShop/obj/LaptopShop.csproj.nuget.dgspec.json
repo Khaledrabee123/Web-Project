@@ -99,6 +99,10 @@
             "Serilog.Sinks.Seq": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[47.3.0, )"
             }
           },
           "imports": [

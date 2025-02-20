@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Stripe;
+using LaptopShop.Services;
 
 namespace LaptopShop
 {
@@ -24,8 +26,14 @@ namespace LaptopShop
 				OptionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("CS"));
 			});
 
+            builder.Services.AddScoped<TokenService>();
+            builder.Services.AddScoped<CustomerService>();
+            builder.Services.AddScoped<ChargeService>();
 
-			builder.Services.AddScoped<laptopSetvice>();
+            builder.Services.AddScoped<IStripeService, StripeService>();
+            StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("StripeOptions:SecretKey");
+
+            builder.Services.AddScoped<laptopSetvice>();
 			builder.Services.AddScoped<LaptopReposatory>();
 			builder.Services.AddScoped<OrderRepository>();
 			builder.Services.AddScoped<CartReposatory>();
@@ -35,7 +43,7 @@ namespace LaptopShop
             builder.Services.AddScoped<IOrder, OrderRepository>();
 			builder.Services.AddScoped<ICart, CartReposatory>();
 
-			builder.Services.AddMemoryCache();
+            builder.Services.AddMemoryCache();
 			builder.Services.AddSerilog();
 			builder.Host.UseSerilog((context, configuration) =>
 				configuration.ReadFrom.Configuration(context.Configuration));

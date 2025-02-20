@@ -10,7 +10,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace LaptopShop.Controllers
 {
-    public class CardController : Controller
+    public class CartController : Controller
     {
 
         laptopSetvice laptopSetvice;
@@ -18,9 +18,9 @@ namespace LaptopShop.Controllers
         UserManager<User> userManager;
         private readonly IMemoryCache _cache;
         private readonly CartReposatory cartReposatory;
-        public ILogger<CardController> _Logger;
+        public ILogger<CartController> _Logger;
 
-        public CardController( laptopSetvice lp , DBlaptops dBlaptops, UserManager<User> userManager , ILogger<CardController> logger, IMemoryCache memory, CartReposatory cartReposatory )
+        public CartController( laptopSetvice lp , DBlaptops dBlaptops, UserManager<User> userManager , ILogger<CartController> logger, IMemoryCache memory, CartReposatory cartReposatory )
         {
             this. userManager = userManager;
             _Logger = logger;
@@ -33,7 +33,7 @@ namespace LaptopShop.Controllers
 
 
 
-        public async Task<IActionResult> viewCard(string username)
+        public async Task<IActionResult> viewCart(string username)
         {
 
             int totla = 0;
@@ -68,7 +68,7 @@ namespace LaptopShop.Controllers
             
             _Logger.LogInformation("{username} added this Product ID {id} to his Cart", username,Id);
             
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Laptop");
         }
         
 
@@ -90,7 +90,7 @@ namespace LaptopShop.Controllers
             _Logger.LogInformation("{username} deleted this Product ID {id} to his Cart", username, Laptopid);
 
 
-            return RedirectToAction ("viewCard","Card",username);
+            return RedirectToAction ("viewCart","Cart",username);
         }
 
 

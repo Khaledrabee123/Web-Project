@@ -11,7 +11,9 @@ namespace LaptopShop.Controllers
 	{
 		
 		private readonly UserManager<User> userManager;
-		ILogger<OrderController> _logger;	
+		ILogger<OrderController> _logger;
+		public OrderRepository OrderRepository { get; }
+
 		public OrderController(UserManager<User> userManager, OrderRepository orderRepository , ILogger<OrderController> logger)
 		{
 			_logger = logger;
@@ -19,7 +21,6 @@ namespace LaptopShop.Controllers
 			OrderRepository = orderRepository;
 		}
 
-		public OrderRepository OrderRepository { get; }
 
 		public IActionResult Order(Order order,string Username)
 		{

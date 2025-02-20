@@ -34,12 +34,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Card/buy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxidXkuY3NodG1s
+[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Cart/buy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxidXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Card/viewCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFx2aWV3Q2FyZC5jc2h0bWw=
+[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Cart/viewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFx2aWV3Q2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Chat/Index.cshtml]
@@ -64,6 +64,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Order/AddOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQWRkT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/payment/Failure.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccGF5bWVudFxGYWlsdXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/payment/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccGF5bWVudFxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sigma/source/repos/LaptopShop/LaptopShop/Views/Role/AddRoel.cshtml]

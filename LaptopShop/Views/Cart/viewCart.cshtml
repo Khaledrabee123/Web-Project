@@ -1,0 +1,46 @@
+﻿@using Microsoft.Extensions.Options
+@model List<LaptopShop.Models.database.Laptop>
+@{
+    ViewData["Title"] = "viewCart";
+}
+
+<h1>view Cart</h1>
+<div class ="all_card">
+@foreach(var item in Model)
+{
+        <div class="card" style="width: 18rem;">
+      <img src="/imges/@item.Image" class="card-img-top" alt="@item.name">
+      <div class="card-body">
+        <h5 class="card-title">@item.name</h5>
+        <p class="card-text">@item.description</p>
+            <p class="card-text">@item.price$</p>
+           
+            <a href="/Laptop/gitbyid/@item.Id" class="btn btn-primary">details</a>
+                <a href="/Cart/deletitem?Laptopid=@item.Id&username=@User.Identity.Name" class="btn btn-primary">Delete</a>
+            </div>
+    </div>
+}
+</div>
+<div class ="total">
+<p class="card-text">total = @ViewBag.Total $</p>
+</div>
+
+<a href="/Order/AddOrder/1/@User.Identity.Name/@ViewBag.Total" type="button" class="btn btn-success">Buy</a>
+<div class="text-center">
+    <form asp-action="Charge" asp-controller="payment" method="POST">
+        <article>
+            <label>Amount: @ViewBag.Total</label>
+        </article>
+
+        <!-- Hidden input to send total price -->
+        <input type="hidden" name="totalPrice" value="@ViewBag.Total" />
+
+
+        <script src="https://checkout.stripe.com/v2/checkout.js"
+                class="stripe-button"
+                data-key="pk_test_51QssVg4CGIN3hKytiykaP5GQQUFchVzSPEQhht6hU9R4HIYgO54etixvSCAJeJe4YmaMbe9O1QIKmrWvfHwt9Eta002kHLvwQy"
+                data-locale="auto"
+                data-description="Sample Charge">
+        </script>
+    </form>
+</div>

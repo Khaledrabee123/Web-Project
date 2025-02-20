@@ -27,8 +27,9 @@
 			<p class="product-category">@item.Brand</p>
 			<p class="product-specs">@item.description<br></p> <p class="product-price">@item.price</p>
 			<div class="buttons">
-				<button onclick="window.location = '/Card/AddToCard/@item.Id/@User.Identity.Name'">Add to cart</button>
-				<button onclick="window.location = '/Laptop/gitbyid/@item.Id'">detals</button>
+				<button id="buy-button" onclick="window.location = '/Cart/AddToCard/@item.Id?username=@User.Identity.Name'">
+					Add to cart
+				</button>				<button onclick="window.location = '/Laptop/gitbyid/@item.Id'">detals</button>
 
 			</div>
 		</div>

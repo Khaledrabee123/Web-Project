@@ -19,7 +19,10 @@
 			<li><strong>Storage:</strong>@Model.Storage</li>
 			<li><strong>Display:</strong>@Model.Display</li>
 		</ul>
-		<button id="buy-button">Buy Now</button>
+		<button id="buy-button" onclick="window.location = '/Cart/AddToCard/@Model.Id?username=@User.Identity.Name'">
+			Add to cart
+		</button>
+
 		@if (User.IsInRole("Admin"))
 		{
 			<a href="/Admin/remove/@Model.Id" class="btn btn-primary">remove</a>
