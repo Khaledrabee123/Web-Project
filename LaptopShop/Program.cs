@@ -1,15 +1,14 @@
+using System.Reflection;
 using LaptopShop.ChatHub;
 using LaptopShop.Models.database;
-using LaptopShop.Models.interfaces;
 using LaptopShop.Models.reposatorys;
 using LaptopShop.Models.servive;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using MediatR;
 using Stripe;
-using LaptopShop.Services;
-
 namespace LaptopShop
 {
     public class Program
@@ -19,36 +18,31 @@ namespace LaptopShop
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			builder.Services.AddScoped<CustomerService>();
+			builder.Services.AddScoped<ChargeService>();
+
+			StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("StripeOptions:SecretKey");
+
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddSignalR();
+			builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+
+			builder.Services.AddMemoryCache();
+			builder.Services.AddSerilog();
+			builder.Host.UseSerilog((context, configuration) =>
+				configuration.ReadFrom.Configuration(context.Configuration));
+
+
 			builder.Services.AddDbContext<DBlaptops>(OptionsBuilder =>
 			{
 				OptionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("CS"));
 			});
 
-            builder.Services.AddScoped<TokenService>();
-            builder.Services.AddScoped<CustomerService>();
-            builder.Services.AddScoped<ChargeService>();
+			
+			builder.Services.AddTransient<ISenderEmail, EmailSender>();
 
-            builder.Services.AddScoped<IStripeService, StripeService>();
-            StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("StripeOptions:SecretKey");
 
-            builder.Services.AddScoped<laptopSetvice>();
-			builder.Services.AddScoped<LaptopReposatory>();
-			builder.Services.AddScoped<OrderRepository>();
-			builder.Services.AddScoped<CartReposatory>();
-            builder.Services.AddScoped<Randomreposatory>();
-            builder.Services.AddScoped<ILaptop, LaptopReposatory>();
-            builder.Services.AddScoped<IRandom, Randomreposatory>();
-            builder.Services.AddScoped<IOrder, OrderRepository>();
-			builder.Services.AddScoped<ICart, CartReposatory>();
-
-            builder.Services.AddMemoryCache();
-			builder.Services.AddSerilog();
-			builder.Host.UseSerilog((context, configuration) =>
-				configuration.ReadFrom.Configuration(context.Configuration));
-
-            builder.Services.AddIdentity<User, IdentityRole>(options =>
+			builder.Services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = true;
             })
@@ -59,7 +53,6 @@ namespace LaptopShop
                 options.TokenLifespan = TimeSpan.FromHours(3); // Set token expiration time as needed
             });
 
-            builder.  Services.AddTransient<ISenderEmail, EmailSender>();
             builder.Services.AddAuthentication().AddGoogle(options =>
 			{
 				var googleAuthSettings = builder.Configuration.GetSection("Authentication:Google");
@@ -70,7 +63,7 @@ namespace LaptopShop
 
 			var app = builder.Build();
 			app.UseSerilogRequestLogging();
-
+			
 
 			// Configure the HTTP request pipeline.
 			if (!app.Environment.IsDevelopment())
@@ -78,7 +71,7 @@ namespace LaptopShop
 				app.UseExceptionHandler("/Home/Error");
 			}
 			app.UseStaticFiles();
-
+			
 			app.UseRouting();
 			app.UseAuthentication();
 			app.UseAuthorization();

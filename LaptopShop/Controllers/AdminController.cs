@@ -1,7 +1,11 @@
 ﻿using System.Security.Claims;
+using LaptopShop.CQRS.Commands;
+using LaptopShop.CQRS.Queries;
 using LaptopShop.Models.database;
+using LaptopShop.Models.reposatorys;
 using LaptopShop.Models.servive;
 using LaptopShop.Views.viewmodels;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,13 +14,13 @@ namespace LaptopShop.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private readonly laptopSetvice laptopSetvice;
+        private readonly IMediator mediator;
         ILogger<AdminController> _logger;
         public IWebHostEnvironment _hostingEnvironment { get; }
 
-        public AdminController(laptopSetvice laptopSetvice, IWebHostEnvironment hostingEnvironment, ILogger<AdminController> logger)
+        public AdminController(IMediator mediator , IWebHostEnvironment hostingEnvironment, ILogger<AdminController> logger)
         {
-            this.laptopSetvice = laptopSetvice;
+            this.mediator = mediator;
             _hostingEnvironment = hostingEnvironment;
             _logger = logger;
         }
@@ -40,7 +44,7 @@ namespace LaptopShop.Controllers
             if (ModelState.IsValid)
             {
 
-                Laptop laptop = laptopSetvice.MakeLaptop(receivelaptop);
+                Laptop laptop = mapper.MakeLaptop(receivelaptop);
 
                 if (laptop.LaptopPhoto != null && laptop.LaptopPhoto.Length > 0)
                 {
@@ -52,8 +56,7 @@ namespace LaptopShop.Controllers
                 }
 
 
-                laptopSetvice.add(laptop);
-
+               await mediator.Send(new AddLaptopCommand(laptop));
                 var admin = User.FindFirst(ClaimTypes.Name).Value.ToString();
 
                 _logger.LogDebug("{admin} add {@laptop}", admin, laptop);
@@ -65,12 +68,11 @@ namespace LaptopShop.Controllers
 
         }
 
-        public IActionResult remove(int id)
+        public async Task< IActionResult> remove(int id)
         {
-            Laptop laptop = laptopSetvice.getLaptopbyid(id);
+            Laptop laptop = await mediator.Send(new GetLaptopByIdQuery(id));
 
-            laptopSetvice.remove(laptop);
-            
+            await mediator.Send(new RemoveLaptopCommand(laptop));            
             var admin = User.FindFirst(ClaimTypes.Name);
 
             _logger.LogDebug("{admin} removed laptop  {laptopid}", admin, id);

@@ -1,8 +1,11 @@
 ﻿using System.Security.Claims;
 using System.Text;
+using LaptopShop.CQRS.Commands;
+using LaptopShop.CQRS.Queries;
 using LaptopShop.Models.database;
 using LaptopShop.Models.reposatorys;
 using LaptopShop.Models.servive;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,34 +15,28 @@ namespace LaptopShop.Controllers
 {
     public class CartController : Controller
     {
-
-        laptopSetvice laptopSetvice;
-        DBlaptops DBlaptops;
-        UserManager<User> userManager;
+        IMediator mediator;
         private readonly IMemoryCache _cache;
-        private readonly CartReposatory cartReposatory;
         public ILogger<CartController> _Logger;
 
-        public CartController( laptopSetvice lp , DBlaptops dBlaptops, UserManager<User> userManager , ILogger<CartController> logger, IMemoryCache memory, CartReposatory cartReposatory )
-        {
-            this. userManager = userManager;
-            _Logger = logger;
-            laptopSetvice = lp;
-            DBlaptops = dBlaptops;
-            _cache = memory;
-            this.cartReposatory = cartReposatory;
-        }
+		public CartController( DBlaptops dBlaptops, ILogger<CartController> logger, IMemoryCache memory, IMediator mediator)
+		{
+			_Logger = logger;
+			
+			_cache = memory;
+			this.mediator = mediator;
+		}
 
 
 
 
-        public async Task<IActionResult> viewCart(string username)
+		public async Task<IActionResult> viewCart(string username)
         {
 
             int totla = 0;
-            string userID = User.FindFirst(ClaimTypes.NameIdentifier).Value; 
-            
-            var  data =cartReposatory.getUsersLaptops(userID);
+            string userID = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            var data = await mediator.Send(new GetUsersLaptopsByUserIDQuery(userID));
            
             foreach (var item in data)
             {
@@ -62,9 +59,9 @@ namespace LaptopShop.Controllers
         {
             string UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            Cart cart =  cartReposatory.makeCart(UserId, Id);
+            Cart cart =  mapper.makeCart(UserId,Id);
 
-            cartReposatory.AddToCart(cart);
+              await mediator.Send(new AddToCartCommand(cart));
             
             _Logger.LogInformation("{username} added this Product ID {id} to his Cart", username,Id);
             
@@ -84,7 +81,7 @@ namespace LaptopShop.Controllers
             string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value.ToString();
 
 
-            cartReposatory.DeleteFromCart(userId, Laptopid);
+            await   mediator.Send(new DeleteFromCartCommand(userId, Laptopid));
 
             
             _Logger.LogInformation("{username} deleted this Product ID {id} to his Cart", username, Laptopid);

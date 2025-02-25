@@ -1,5 +1,7 @@
-﻿using LaptopShop.Models.database;
+﻿using LaptopShop.CQRS.Queries;
+using LaptopShop.Models.database;
 using LaptopShop.Models.servive;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -9,17 +11,17 @@ namespace LaptopShop.Controllers
     [Authorize]
     public class LaptopController : Controller
     {
-        laptopSetvice laptopSetvice;
+        private readonly IMediator mediator;
         ILogger<LaptopController> _logger;
         IMemoryCache _Cache;
-        public LaptopController(laptopSetvice lp, ILogger<LaptopController> logger, IMemoryCache cache)
-        {
-            laptopSetvice = lp;
-            _logger = logger;
-            _Cache = cache;
-        }
+		public LaptopController( ILogger<LaptopController> logger, IMemoryCache cache, IMediator mediator)
+		{
+			_logger = logger;
+			_Cache = cache;
+			this.mediator = mediator;
+		}
 
-        public IActionResult Index()
+		public async Task< IActionResult> Index()
         {
             string key = "GetAllLaptops";
             if (_Cache.TryGetValue(key, out List<Laptop> data))
@@ -34,7 +36,7 @@ namespace LaptopShop.Controllers
             .SetSlidingExpiration(TimeSpan.FromMinutes(5))
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(30))
             .SetPriority(CacheItemPriority.Normal);
-            data = laptopSetvice.getAll();
+            data = await mediator.Send(new GetAllLaptopsQuery());
             _Cache.Set(key, data, cacheOptions);
             
             
@@ -50,12 +52,12 @@ namespace LaptopShop.Controllers
 
 
 
-        public IActionResult gitbyid(int Id)
+        public async Task<IActionResult> gitbyid(int Id)
         {
-            return View(laptopSetvice.getLaptopbyid(Id));
-        }
+			return  View(await mediator.Send(new GetLaptopByIdQuery(Id)));
+		}
 
-        public IActionResult getcatagory(String catagory)
+        public async Task<IActionResult> getcatagory(String catagory)
         {
             string key = "Catagorty" + catagory;
             if (_Cache.TryGetValue(key, out List<Laptop> data))
@@ -69,7 +71,7 @@ namespace LaptopShop.Controllers
             .SetSlidingExpiration(TimeSpan.FromMinutes(5))
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(30))
             .SetPriority(CacheItemPriority.Normal);
-            data = laptopSetvice.getbyCategorie(catagory);
+            data = await mediator.Send(new GetLaptopsByCategorieQuery(catagory));
             _Cache.Set(key, data, cacheOptions);
             
             

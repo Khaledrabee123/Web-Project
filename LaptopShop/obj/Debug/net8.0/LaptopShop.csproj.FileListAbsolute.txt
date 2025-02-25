@@ -282,3 +282,6 @@ C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\Microsoft.Ext
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\obj\Debug\net8.0\LaptopShop.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\appsettings.json
 C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\Stripe.net.dll
+C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\MediatR.dll
+C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\sigma\source\repos\LaptopShop\LaptopShop\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
