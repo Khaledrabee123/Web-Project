@@ -24,11 +24,10 @@ namespace LaptopShop.Controllers
         ILogger<UserController> _logger;
         private IMemoryCache _Cache;
         private readonly ISenderEmail emailSender;
-        private readonly Randomreposatory Random;
 
         public RoleManager<IdentityRole> RoleManager { get; }
 
-        public UserController(UserManager<User> UserManager, SignInManager<User> signInManager, DBlaptops dBlaptops, RoleManager<IdentityRole> roleManager, ILogger<UserController> logger, ISenderEmail emailSender, IMemoryCache memoryCache, Randomreposatory random)
+        public UserController(UserManager<User> UserManager, SignInManager<User> signInManager, DBlaptops dBlaptops, RoleManager<IdentityRole> roleManager, ILogger<UserController> logger, ISenderEmail emailSender, IMemoryCache memoryCache)
         {
             this.UserManager = UserManager;
             SignInManager = signInManager;
@@ -37,7 +36,6 @@ namespace LaptopShop.Controllers
             _logger = logger;
             this.emailSender = emailSender;
             this._Cache = memoryCache;
-            Random = random;
         }
 
 
@@ -69,7 +67,8 @@ namespace LaptopShop.Controllers
                 var IsUsernameUser = await UserManager.FindByEmailAsync(viewUser.UserName);
                 if (IsEmailUsed == null && IsUsernameUser == null)
                 {
-                    viewUser.Id = Random.randomNumber().ToString();
+                    Randomreposatory rnd = new Randomreposatory();
+                    viewUser.Id = rnd.randomNumber().ToString();
                     string key = "User" + viewUser.Id;
                     var cacheOptions = new MemoryCacheEntryOptions()
                         .SetSlidingExpiration(TimeSpan.FromMinutes(15))
@@ -180,7 +179,8 @@ namespace LaptopShop.Controllers
 
             string key = user.Id.ToString();
 
-            int code = Random.randomNumber();
+            Randomreposatory randomreposatory = new Randomreposatory();
+            int code = randomreposatory.randomNumber();
             var cacheOptions = new MemoryCacheEntryOptions()
             .SetSlidingExpiration(TimeSpan.FromMinutes(15))
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(30))
